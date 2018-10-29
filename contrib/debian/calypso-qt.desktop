@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=CALYPSO
+Comment=CALYPSO P2P Cryptocurrency
+Comment[fr]=CALYPSO, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=CALYPSO, eşten eşe kriptografik sanal para birimi
+Exec=calypso-qt %u
+Terminal=false
+Type=Application
+Icon=calypso128
+MimeType=x-scheme-handler/calypso;
+Categories=Office;Finance;

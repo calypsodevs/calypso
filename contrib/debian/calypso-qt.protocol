@@ -1,0 +1,11 @@
+[Protocol]
+exec=calypso-qt '%u'
+protocol=calypso
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false

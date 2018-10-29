@@ -1,0 +1,26 @@
+# /etc/conf.d/calypsod: config file for /etc/init.d/calypsod
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/calypso/calypso.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/calypsod"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/calypsod.pid"
+
+# Where to write calypsod data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/calypsod"
+
+# User and group to own calypsod process
+#BITCOIND_USER="calypso"
+#BITCOIND_GROUP="calypso"
+
+# Path to calypsod executable
+#BITCOIND_BIN="/usr/bin/calypsod"
+
+# Nice value to run calypsod under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""
