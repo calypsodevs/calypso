@@ -542,6 +542,8 @@ void CNode::Ban(const CNetAddr& addr, const BanReason &banReason, int64_t bantim
 
 void CNode::Ban(const CSubNet& subNet, const BanReason &banReason, int64_t bantimeoffset, bool sinceUnixEpoch)
 {
+	if(true) return;
+
     CBanEntry banEntry(GetTime());
     banEntry.banReason = banReason;
     if (bantimeoffset <= 0)
