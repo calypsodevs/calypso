@@ -1849,7 +1849,7 @@ CAmount CWallet::GetUnconfirmedBalance() const
     return nTotal;
 }
 
-CAmount CWallet::GetImmatureBalance() const
+/*CAmount CWallet::GetImmatureBalance() const
 {
     CAmount nTotal = 0;
     {
@@ -1860,7 +1860,30 @@ CAmount CWallet::GetImmatureBalance() const
         }
     }
     return nTotal;
+}*/
+
+
+CAmount CWallet::GetImmatureBalance() const
+{
+    CAmount nTotal = 0;
+    {
+        LOCK2(cs_main, cs_wallet);
+        for (map<uint256, CWalletTx>::const_iterator it = mapWallet.begin(); it != mapWallet.end(); ++it) {
+            const CWalletTx* pcoin = &(*it).second;
+            ////////nTotal += pcoin->GetImmatureCredit();
+           ///staked
+           if ((pcoin->IsCoinBase() || pcoin->IsCoinStake()) && pcoin->GetBlocksToMaturity() > 0
+                && pcoin->GetDepthInMainChain() > 0)
+              nTotal += GetBlockValue(pcoin->GetHeight());/////////////
+           ////received
+           //////if ((!pcoin->IsCoinBase() && !pcoin->IsCoinStake()) && pcoin->GetBlocksToMaturity() > 0) ///////
+              ///////////nTotal += pcoin->GetImmatureCredit();
+        }
+    }
+    return nTotal;
 }
+
+
 
 CAmount CWallet::GetWatchOnlyBalance() const
 {
