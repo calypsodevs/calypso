@@ -596,6 +596,12 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
                 nMintableLastCheck = GetTime();
                 fMintableCoins = pwallet->MintableCoins();
             }
+	
+	    if ((GetTime() - chainActive.Tip()->GetBlockTime() < 30)) //////////// debug enforce 30 sec block
+            {
+                MilliSleep(30000);
+                continue;
+            }
 
             if (chainActive.Tip()->nHeight < Params().LAST_POW_BLOCK()) {
                 MilliSleep(5000);
