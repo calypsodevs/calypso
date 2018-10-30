@@ -788,6 +788,14 @@ public:
         const CBlockIndex* pindexRet;
         return GetDepthInMainChain(pindexRet, enableIX);
     }
+
+    int GetHeight(const CBlockIndex*& pindexRet) const;/////////
+    int GetHeight() const///////////
+    {
+        const CBlockIndex* pindexRet;
+        return GetHeight(pindexRet);
+    }
+
     bool IsInMainChain() const
     {
         const CBlockIndex* pindexRet;
