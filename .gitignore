@@ -15,7 +15,7 @@ src/test/test_calypso
 src/qt/test/test_calypso-qt
 
 # autoreconf
-Makefile.in
+# Makefile.in
 aclocal.m4
 autom4te.cache/
 build-aux/config.guess
